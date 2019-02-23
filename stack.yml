@@ -3,19 +3,13 @@ version: '3.1'
 
 services:
 
-  sql:
+  db:
     image: mariadb
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: secret
     ports:
       - 3306:3306
-
-  adminer:
-    image: adminer
-    restart: always
-    ports:
-      - 8080:8080
   
   mongo:
     image: mongo
@@ -27,11 +21,3 @@ services:
       - 27017:27017
       - 27018:27018
 
-  mongo-express:
-    image: mongo-express
-    restart: always
-    ports:
-      - 8090:8081
-    environment:
-      ME_CONFIG_MONGODB_ADMINUSERNAME: root
-      ME_CONFIG_MONGODB_ADMINPASSWORD: secret
