@@ -15,9 +15,8 @@ client.connect(function(err, db) {
     assert.equal(null, err);
 
     console.log(`Connected to server `);
+    
     console.log(db);
-
-    client.db(vaultDatabase);
 
     client.close();
   });
